@@ -1,0 +1,10 @@
+# build do CMake (inclui o SFML baixado pelo FetchContent e o compile_commands.json)
+build/
+
+# índice do clangd
+.cache/
+
+# editores
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,6 @@
+{
+    "life": 100,
+    "damage": 10.0,
+    "speed": 5.0,
+    "sprite": "assets/sprites/player/scarecrow.png"
+}
