@@ -1,0 +1,29 @@
+[
+    { 
+        "id": "corn",
+        "life": 100,
+        "value": 10,
+        "effect": null,
+        "sprite": "./assets/sprites/plants/plants.png",
+        "sprite_pos": {"x": 65, "y": 33},
+        "sprite_size": {"x": 29,"y": 29}
+    },
+    {
+        "id": "pumpkin",
+        "life": 250,
+        "value": 100,
+        "effect": null,
+        "sprite": "./assets/sprites/plants/plants.png",
+        "sprite_pos": {"x": 163, "y": 69},
+        "sprite_size": {"x": 26, "y": 24}
+    },
+    {
+        "id": "tomato",
+        "life": 60,
+        "value": 0,
+        "effect": "heal",
+        "sprite": "./assets/sprites/plants/plants.png",
+        "sprite_pos": {"x": 9, "y": 173},
+        "sprite_size": {"x": 13, "y": 14}
+    }
+]

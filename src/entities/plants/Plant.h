@@ -1,23 +1,27 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "PlayerDef.h"
+#include "PlantDef.h"
 
-class Player
+
+class Plant
 {
-    const PlayerDef& m_def;
-    float m_life;
-    sf::Sprite m_sprite;
+    const PlantDef& m_def;
+    sf::Sprite      m_sprite;
+    float           m_life;
+    int             m_value;
+    EffectType      m_effect;
 
 public:
-    Player(
-            const PlayerDef& def,
+    Plant(
+            const PlantDef& def,
             const sf::Texture& texture,
             sf::Vector2f position);
 
     sf::FloatRect getBounds() const;
     sf::Vector2f getCenter() const;
 
-    void move(sf::Vector2f v, sf::Vector2u window_size);
+
     void draw(sf::RenderWindow& w);
+
 };

@@ -1,0 +1,54 @@
+[
+    {
+        "id": "rat",
+        "life": 23,
+        "damage": 26,
+        "attack_cooldown": 1.2,
+        "target": "plant",
+        "speed": 2.0,
+        "sprite": "./assets/sprites/mobs/rat.png",
+        "sprite_pos": {"x": 0, "y": 0},
+        "sprite_size": {"x": 24, "y": 24},
+        "hitbox_offset": {"x": 4, "y": 1},
+        "hitbox_size": {"x": 15, "y": 22}
+    },
+    {
+        "id": "mole",
+        "life": 58,
+        "damage": 51,
+        "attack_cooldown": 3.0,
+        "target": "closest",
+        "speed": 0.5,
+        "sprite": "./assets/sprites/mobs/mole.png",
+        "sprite_pos": {"x": 0, "y": 0},
+        "sprite_size": {"x": 24, "y": 24},
+        "hitbox_offset": {"x": 3, "y": 1},
+        "hitbox_size": {"x": 18, "y": 22}
+    },
+    {
+        "id": "locust",
+        "life": 9,
+        "damage": 10,
+        "attack_cooldown": 0.9,
+        "target": "closest",
+        "speed": 3.3,
+        "sprite": "./assets/sprites/mobs/locust.png",
+        "sprite_pos": {"x": 0, "y": 0},
+        "sprite_size": {"x": 24, "y": 24},
+        "hitbox_offset": {"x": 3, "y": 1},
+        "hitbox_size": {"x": 17, "y": 22}
+    },
+    {
+        "id": "crow",
+        "life": 16,
+        "damage": 34,
+        "attack_cooldown": 5,
+        "target": "player",
+        "speed": 4.5,
+        "sprite": "./assets/sprites/mobs/crow.png",
+        "sprite_pos": {"x": 0, "y": 0},
+        "sprite_size": {"x": 24, "y": 24},
+        "hitbox_offset": {"x": 1, "y": 1},
+        "hitbox_size": {"x": 21, "y": 22}
+    }
+]

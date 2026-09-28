@@ -29,5 +29,13 @@ void Player::move(sf::Vector2f v, sf::Vector2u window_size)
     m_sprite.setPosition(pos);
 }
 
+sf::FloatRect Player::getBounds() const { return m_sprite.getGlobalBounds(); }
+sf::Vector2f Player::getCenter() const
+{
+    return sf::Vector2f{
+        getBounds().position.x + getBounds().size.x / 2.f,
+        getBounds().position.y + getBounds().size.y / 2.f};
+}
+
 void Player::draw(sf::RenderWindow& w) { w.draw(m_sprite); }
 
