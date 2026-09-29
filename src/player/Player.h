@@ -6,7 +6,7 @@
 class Player
 {
     const PlayerDef& m_def;
-    float m_life;
+    int m_life;
     sf::Sprite m_sprite;
 
 public:
@@ -17,6 +17,9 @@ public:
 
     sf::FloatRect getBounds() const;
     sf::Vector2f getCenter() const;
+
+    void takeDamage(int damage);
+    void heal(int amount);
 
     void move(sf::Vector2f v, sf::Vector2u window_size);
     void draw(sf::RenderWindow& w);

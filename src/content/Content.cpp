@@ -38,7 +38,7 @@ static PlayerDef parsePlayer(const json& j)
 {
     PlayerDef p;
     p.life      = j.at("life").get<int>();
-    p.damage    = j.at("damage").get<float>();
+    p.damage    = j.at("damage").get<int>();
     p.speed     = j.at("speed").get<float>();
     p.sprite    = j.at("sprite").get<std::string>();
     return p;

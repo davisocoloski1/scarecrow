@@ -21,6 +21,8 @@ public:
     sf::FloatRect getBounds() const;
     sf::Vector2f getCenter() const;
 
+    void takeDamage(int damage);
+    void regenerate(int amount);
 
     void draw(sf::RenderWindow& w);
 

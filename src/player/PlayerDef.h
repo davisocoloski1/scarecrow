@@ -6,6 +6,7 @@
 struct PlayerDef
 {
     std::string id;
-    float damage, life, speed;
+    float speed;
+    int damage, life;
     std::string sprite;
 };

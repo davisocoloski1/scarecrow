@@ -37,5 +37,8 @@ sf::Vector2f Player::getCenter() const
         getBounds().position.y + getBounds().size.y / 2.f};
 }
 
+void Player::takeDamage(int damage) { m_life -= damage; }
+void Player::heal(int amount) { m_life += amount; }
+
 void Player::draw(sf::RenderWindow& w) { w.draw(m_sprite); }
 

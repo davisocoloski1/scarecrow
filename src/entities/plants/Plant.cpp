@@ -25,5 +25,8 @@ sf::Vector2f Plant::getCenter() const
         getBounds().position.y + getBounds().size.y / 2.f};
 }
 
+void Plant::takeDamage(int damage) { m_life -= damage; }
+void Plant::regenerate(int amount) { m_life += amount; }
+
 
 void Plant::draw(sf::RenderWindow& w) { w.draw(m_sprite); }
