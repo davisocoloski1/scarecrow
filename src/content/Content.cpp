@@ -37,10 +37,12 @@ static json readJson(const std::string& path)
 static PlayerDef parsePlayer(const json& j)
 {
     PlayerDef p;
-    p.life      = j.at("life").get<int>();
-    p.damage    = j.at("damage").get<int>();
-    p.speed     = j.at("speed").get<float>();
-    p.sprite    = j.at("sprite").get<std::string>();
+    p.life          = j.at("life").get<int>();
+    p.damage        = j.at("damage").get<int>();
+    p.speed         = j.at("speed").get<float>();
+    p.sprite        = j.at("sprite").get<std::string>();
+    p.hitbox_offset = j.at("hitbox_offset").get<sf::Vector2i>();
+    p.hitbox_size   = j.at("hitbox_size").get<sf::Vector2i>();
     return p;
 }
 
@@ -83,6 +85,8 @@ static PlantDef parsePlant(const json& j)
     p.sprite        = j.at("sprite").get<std::string>();
     p.sprite_pos    = j.at("sprite_pos").get<sf::Vector2i>();
     p.sprite_size   = j.at("sprite_size").get<sf::Vector2i>();
+    p.hitbox_offset = j.at("hitbox_offset").get<sf::Vector2i>();
+    p.hitbox_size   = j.at("hitbox_size").get<sf::Vector2i>();
     return p;
 }
 

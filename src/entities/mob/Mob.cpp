@@ -6,14 +6,16 @@
 #include <limits>
 
 
-Mob::Mob(MobDef& def, sf::Texture& texture, sf::Vector2f pos)
+Mob::Mob(MobDef& def, const sf::Texture& texture, const sf::Texture& health_bar_texture, sf::Vector2f pos)
     : m_def(def)
     , m_life(def.life)
+    , m_max_life(def.life)
     , m_damage(def.damage)
     , m_attack_cooldown(def.attack_cooldown)
     , m_target(def.target)
     , m_speed(def.speed)
     , m_sprite(texture) 
+    , m_health_bar(health_bar_texture)
     , m_hitbox_offset(def.hitbox_offset) 
     , m_hitbox_size(def.hitbox_size) {
         m_sprite.setTextureRect(sf::IntRect(
@@ -89,6 +91,40 @@ void Mob::chaseTarget()
     }
 
     m_sprite.move(toTarget.normalized() * m_speed);
+}
+
+void Mob::hitPlayer(Player& p) 
+{ 
+    if (!p.hitbox().findIntersection(hitbox()))
+    {
+        m_attack_clock.reset();
+        return;
+    }
+
+    m_attack_clock.start();
+
+    if (p.hitbox().findIntersection(hitbox()) && m_attack_clock.getElapsedTime().asSeconds() >= m_attack_cooldown)
+    {
+        p.takeDamage(m_damage);
+        m_attack_clock.restart();
+    }
+}
+void Mob::hitPlant(Plant& p) { p.takeDamage(m_damage); }
+
+void Mob::resolveHealthBar(EntHealthBar& hb) { hb.resolveHealthBar(m_life, m_max_life, m_health_bar); }
+
+void Mob::drawHealthBar(sf::RenderWindow& w)
+{
+    auto lb = m_health_bar.getLocalBounds();
+    auto b = hitbox();
+
+    m_health_bar.setOrigin(sf::Vector2f{
+            lb.position.x + lb.size.x / 2.f, lb.position.y + lb.size.y / 2.f});
+
+    m_health_bar.setPosition(sf::Vector2f{
+            getCenter().x, b.position.y - 4.f});
+
+    w.draw(m_health_bar);
 }
 
 void Mob::drawHitbox(sf::RenderWindow& w, const sf::FloatRect r)

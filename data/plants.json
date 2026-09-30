@@ -1,21 +1,25 @@
 [
     { 
         "id": "corn",
-        "life": 100,
+        "life": 200,
         "value": 10,
         "effect": null,
         "sprite": "./assets/sprites/plants/plants.png",
-        "sprite_pos": {"x": 65, "y": 33},
-        "sprite_size": {"x": 29,"y": 29}
+        "sprite_pos": {"x": 64, "y": 32},
+        "sprite_size": {"x": 32,"y": 32},
+        "hitbox_offset": {"x": 1, "y": 1},
+        "hitbox_size": {"x": 28, "y": 28}
     },
     {
         "id": "pumpkin",
-        "life": 250,
+        "life": 500,
         "value": 100,
         "effect": null,
         "sprite": "./assets/sprites/plants/plants.png",
-        "sprite_pos": {"x": 163, "y": 69},
-        "sprite_size": {"x": 26, "y": 24}
+        "sprite_pos": {"x": 160, "y": 64},
+        "sprite_size": {"x": 32, "y": 32},
+        "hitbox_offset": {"x": 3, "y": 5},
+        "hitbox_size": {"x": 26, "y": 24}
     },
     {
         "id": "tomato",
@@ -23,7 +27,9 @@
         "value": 0,
         "effect": "heal",
         "sprite": "./assets/sprites/plants/plants.png",
-        "sprite_pos": {"x": 9, "y": 173},
-        "sprite_size": {"x": 13, "y": 14}
+        "sprite_pos": {"x": 0, "y": 160},
+        "sprite_size": {"x": 32, "y": 32},
+        "hitbox_offset": {"x": 9, "y": 13},
+        "hitbox_size": {"x": 13, "y": 14}
     }
 ]

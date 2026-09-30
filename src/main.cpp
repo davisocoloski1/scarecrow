@@ -23,7 +23,11 @@ int main()
     Content content;
     content.load("./data");
 
-    Player player(content.player, content.textures.at(content.player.sprite), {100.f, 100.f});
+    const sf::Texture healthBarTexture("assets/sprites/player/player_life_bar.png");
+    const sf::Texture entHealthBarTexture("assets/sprites/ent_health_bar.png");
+    HealthBar hb;
+    EntHealthBar ehb;
+    Player player(content.player, content.textures.at(content.player.sprite), healthBarTexture, {100.f, 100.f});
 
     sf::Texture plants_texture;
     if (!plants_texture.loadFromFile("assets/sprites/plants/plants.png")) return 1;
@@ -73,7 +77,7 @@ int main()
                 plantType = "pumpkin";
 
             PlantDef& def = content.plants.at(plantType);
-            Plant p(def, content.textures.at(def.sprite), 
+            Plant p(def, content.textures.at(def.sprite), entHealthBarTexture,
                     sf::Vector2f{(float)plantsPosX(rng), (float)plantsPosY(rng)});
 
             plantClock.restart();
@@ -94,7 +98,7 @@ int main()
                 mobType = "crow";
 
             MobDef& def = content.mobs.at(mobType);
-            Mob m(def, content.textures.at(def.sprite),
+            Mob m(def, content.textures.at(def.sprite), entHealthBarTexture,
                     sf::Vector2f{(float)mobsPosX(rng), (float)mobsPosY(rng)});
 
             mobClock.restart();
@@ -106,7 +110,11 @@ int main()
         {
             m.updateTarget(player, plants);
             m.chaseTarget();
+            m.hitPlayer(player);
+            m.resolveHealthBar(ehb);
         }
+
+        for (Plant& p : plants) { p.resolveHealthBar(ehb); }
 
 
         auto w_pressed = sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::W);
@@ -120,14 +128,23 @@ int main()
         if (a_pressed) v.x -= 1;
         if (d_pressed) v.x += 1;
         player.move(v, window.getSize());
+        player.resolveHealthBar(hb);
 
         window.clear(sf::Color::Black);
         window.draw(background);
 
         player.draw(window);
-        for (Plant& p : plants) p.draw(window);
+        player.drawHealthBar(window);
+        if (toggleHitboxes) player.drawHitbox(window, player.hitbox());
+        for (Plant& p : plants) 
+        {
+            p.draw(window);
+            p.drawHealthBar(window);
+            if (toggleHitboxes) p.drawHitbox(window, p.getBounds());
+        }
         for (Mob& m : mobs) { 
             m.draw(window); 
+            m.drawHealthBar(window);
             if (toggleHitboxes) m.drawHitbox(window, m.getGlobals()); 
         }
 

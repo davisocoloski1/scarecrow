@@ -14,4 +14,6 @@ struct PlantDef
     std::string sprite;
     sf::Vector2i sprite_pos;
     sf::Vector2i sprite_size;
+    sf::Vector2i hitbox_offset;
+    sf::Vector2i hitbox_size;
 };

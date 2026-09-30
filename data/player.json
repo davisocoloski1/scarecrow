@@ -1,6 +1,8 @@
 {
-    "life": 100,
+    "life": 250,
     "damage": 10.0,
     "speed": 5.0,
-    "sprite": "assets/sprites/player/scarecrow.png"
+    "sprite": "assets/sprites/player/scarecrow.png",
+    "hitbox_offset": {"x": 5, "y": 2},
+    "hitbox_size": {"x": 52, "y": 58}
 }
