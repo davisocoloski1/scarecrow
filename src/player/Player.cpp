@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "PlayerDef.h"
-#include "player/health_bar.h"
+#include "player/frames.h"
 
 #include <SFML/Graphics.hpp>
 

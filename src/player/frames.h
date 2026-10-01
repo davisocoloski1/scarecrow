@@ -14,3 +14,6 @@ struct HealthBar
     sf::IntRect frame7 = sf::IntRect({0, 42}, {24, 6});
     sf::IntRect frame8 = sf::IntRect({0, 49}, {24, 6});
 };
+
+struct Scarecrow
+{};
