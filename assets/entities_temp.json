@@ -1,0 +1,43 @@
+{ "frames": {
+   "rat": {
+    "frame": { "x": 23, "y": 0, "w": 27, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 130, "y": 140, "w": 27, "h": 17 },
+    "sourceSize": { "w": 640, "h": 360 },
+    "duration": 100
+   },
+   "crow": {
+    "frame": { "x": 23, "y": 17, "w": 25, "h": 16 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 164, "y": 139, "w": 25, "h": 16 },
+    "sourceSize": { "w": 640, "h": 360 },
+    "duration": 100
+   },
+   "mole": {
+    "frame": { "x": 0, "y": 27, "w": 20, "h": 20 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 200, "y": 134, "w": 20, "h": 20 },
+    "sourceSize": { "w": 640, "h": 360 },
+    "duration": 100
+   },
+   "player": {
+    "frame": { "x": 0, "y": 0, "w": 23, "h": 27 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 98, "y": 132, "w": 23, "h": 27 },
+    "sourceSize": { "w": 640, "h": 360 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.2-dev",
+  "image": "assets/entities_temp.png",
+  "format": "RGBA8888",
+  "size": { "w": 64, "h": 64 },
+  "scale": "1"
+ }
+}
